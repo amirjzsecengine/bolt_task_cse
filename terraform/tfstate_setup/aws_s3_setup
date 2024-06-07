@@ -1,0 +1,6 @@
+# to Create the S3 bucket as a tfstat container:
+aws s3api create-bucket --bucket bolt-task-terraform-state-bucket --region eu-north-1 --create-bucket-configuration LocationConstraint=eu-north-1
+
+# to Block public access:
+aws s3api put-public-access-block --bucket bolt-task-terraform-state-bucket --public-access-block-configuration 'BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true'
+
